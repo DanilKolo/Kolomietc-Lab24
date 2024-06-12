@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App with CDN</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- React CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel for JSX and ES6 support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    
+    <!-- App Component -->
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
+class HobbyInfo extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Моє хоббі: Малювання</h1>
+                <p>Малювання є моїм улюбленим способом виразу. Я люблю творити картини, особливо пейзажі.</p>
+            </div>
+        );
+    }
+}
+
+// Рендер компоненти в корінь додатка
+ReactDOM.render(<HobbyInfo />, document.getElementById('root'));
+import React from 'react';
+import './App.css';
+
+// Функціональна компонента
+function HobbyInfo() {
+    return (
+        <div className="text-center">
+            <h1>Моє хоббі: Малювання</h1>
+            <p>Малювання є моїм улюбленим способом виразу. Я люблю творити картини, особливо пейзажі.</p>
+        </div>
+    );
+}
+
+export default HobbyInfo;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root {
+    text-align: center;
+}
